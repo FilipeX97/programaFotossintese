@@ -1,5 +1,5 @@
 package br.com.unip.aps.modelo.planta;
 
-public class Flor {
-
+public class Flor extends Planta{
+	
 }
