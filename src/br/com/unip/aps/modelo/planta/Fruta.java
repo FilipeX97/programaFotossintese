@@ -7,7 +7,7 @@ public class Fruta extends Planta{
 		this.setApelidoPlanta(apelido);
 		this.setGrupoPlanta(3);
 		this.setEstagioFinalPlanta(3);
-		this.setQuantidadeParaColherPlanta(9);
+		this.setQuantidadeEnergiaParaColherPlanta(9);
 	}
 	
 }

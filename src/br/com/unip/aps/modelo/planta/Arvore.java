@@ -7,7 +7,7 @@ public class Arvore extends Planta{
 		this.setApelidoPlanta(apelido);
 		this.setGrupoPlanta(1);
 		this.setEstagioFinalPlanta(3);
-		this.setQuantidadeParaColherPlanta(12);
+		this.setQuantidadeEnergiaParaColherPlanta(12);
 	}
 
 }

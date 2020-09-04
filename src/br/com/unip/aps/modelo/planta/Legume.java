@@ -7,7 +7,7 @@ public class Legume extends Planta{
 		this.setApelidoPlanta(apelido);
 		this.setGrupoPlanta(4);
 		this.setEstagioFinalPlanta(3);
-		this.setQuantidadeParaColherPlanta(9);
+		this.setQuantidadeEnergiaParaColherPlanta(9);
 	}
 	
 }

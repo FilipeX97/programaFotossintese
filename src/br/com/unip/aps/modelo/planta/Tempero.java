@@ -7,7 +7,7 @@ public class Tempero extends Planta{
 		this.setApelidoPlanta(apelido);
 		this.setGrupoPlanta(5);
 		this.setEstagioFinalPlanta(2);
-		this.setQuantidadeParaColherPlanta(6);
+		this.setQuantidadeEnergiaParaColherPlanta(6);
 	}
 	
 }

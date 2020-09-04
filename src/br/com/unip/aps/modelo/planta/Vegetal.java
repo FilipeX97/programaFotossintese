@@ -7,7 +7,7 @@ public class Vegetal extends Planta{
 		this.setApelidoPlanta(apelido);
 		this.setGrupoPlanta(6);
 		this.setEstagioFinalPlanta(3);
-		this.setQuantidadeParaColherPlanta(9);
+		this.setQuantidadeEnergiaParaColherPlanta(9);
 	}
 	
 }

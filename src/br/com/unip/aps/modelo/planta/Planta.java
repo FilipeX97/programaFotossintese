@@ -9,10 +9,10 @@ public abstract class Planta {
 	private int grupoPlanta;
 	private boolean estadoPlanta;
 	private int quantidadeDeLuz;
-	private int quantidadeDeAgua;
-	private int quantidadeDeAguaDia;
+	private final static int quantidadeDeAguaTotalDoDia = 2;
+	private int quantidadeDeAguaDuranteDia;
 	private int quantidadeDeEnergiaNaPlanta;
-	private int quantidadeParaColherPlanta;
+	private int quantidadeEnergiaParaColherPlanta;
 	private boolean colherPlanta;
 	private boolean respiracaoPlanta;
 	private final static int estagioInicialPlanta = 1;
@@ -24,12 +24,28 @@ public abstract class Planta {
 	Planta() {
 		estadoPlanta = true;
 		quantidadeDeLuz = 0;
-		quantidadeDeAgua = 0;
-		quantidadeDeAguaDia = 0;
+		quantidadeDeAguaDuranteDia = 0;
 		quantidadeDeEnergiaNaPlanta = 0;
 		colherPlanta = false;
 		respiracaoPlanta = n.getAr();
 		estagioAtualPlanta = estagioInicialPlanta;
+	}
+	
+	
+	public void alterarDiaNoite() {
+		if (n.getLuz()) {
+			n.setLuz(false);
+			System.out.println("Está de noite..."
+					+ "/nVá dormir...");
+		} else {
+			n.setLuz(true);
+			System.out.println("Está de dia..."
+					+ "/nCuide de sua planta...");
+		}
+	}
+	
+	public boolean isLuz() {
+		return n.getAr();
 	}
 
 	public String getNomePlanta() {
@@ -64,12 +80,8 @@ public abstract class Planta {
 		this.quantidadeDeLuz = qLuz;
 	}
 
-	public int getQuantidadeDeAgua() {
-		return quantidadeDeAgua;
-	}
-
-	public void setQuantidadeDeAgua(int qAgua) {
-		this.quantidadeDeAgua = qAgua;
+	public int getQuantidadeDeAguaTotalDoDia() {
+		return quantidadeDeAguaTotalDoDia;
 	}
 
 	public String getApelidoPlanta() {
@@ -80,12 +92,12 @@ public abstract class Planta {
 		this.apelidoPlanta = apelidoPlanta;
 	}
 
-	public int getQuantidadeDeAguaDia() {
-		return quantidadeDeAguaDia;
+	public int getQuantidadeDeAguaDuranteDia() {
+		return quantidadeDeAguaDuranteDia;
 	}
 
-	public void setQuantidadeDeAguaDia(int quantidadeDeAguaDia) {
-		this.quantidadeDeAguaDia = quantidadeDeAguaDia;
+	public void setQuantidadeDeAguaDuranteDia(int quantidadeDeAguaDia) {
+		this.quantidadeDeAguaDuranteDia = quantidadeDeAguaDia;
 	}
 
 	public int getQuantidadeDeEnergiaNaPlanta() {
@@ -94,14 +106,6 @@ public abstract class Planta {
 
 	public void setQuantidadeDeEnergiaNaPlanta(int quantidadeDeEnergiaNaPlanta) {
 		this.quantidadeDeEnergiaNaPlanta = quantidadeDeEnergiaNaPlanta;
-	}
-
-	public int getQuantidadeParaColherPlanta() {
-		return quantidadeParaColherPlanta;
-	}
-
-	public void setQuantidadeParaColherPlanta(int quantidadeParaColherPlanta) {
-		this.quantidadeParaColherPlanta = quantidadeParaColherPlanta;
 	}
 
 	public boolean isColherPlanta() {
@@ -135,17 +139,13 @@ public abstract class Planta {
 	public void setEstagioFinalPlanta(int estagioFinalPlanta) {
 		this.estagioFinalPlanta = estagioFinalPlanta;
 	}
-
-	public Natureza getN() {
-		return n;
+	
+	public int getQuantidadeEnergiaParaColherPlanta() {
+		return quantidadeEnergiaParaColherPlanta;
 	}
 
-	public void setN(Natureza n) {
-		this.n = n;
-	}
-
-	public static int getEstagioinicialplanta() {
-		return estagioInicialPlanta;
+	public void setQuantidadeEnergiaParaColherPlanta(int quantidadeEnergiaParaColherPlanta) {
+		this.quantidadeEnergiaParaColherPlanta = quantidadeEnergiaParaColherPlanta;
 	}
 
 }

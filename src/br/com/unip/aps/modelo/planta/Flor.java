@@ -7,7 +7,7 @@ public class Flor extends Planta{
 		this.setApelidoPlanta(apelido);
 		this.setGrupoPlanta(2);
 		this.setEstagioFinalPlanta(2);
-		this.setQuantidadeParaColherPlanta(6);
+		this.setQuantidadeEnergiaParaColherPlanta(6);
 	}
 	
 }
