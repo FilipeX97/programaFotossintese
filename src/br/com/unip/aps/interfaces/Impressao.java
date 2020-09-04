@@ -4,5 +4,8 @@ import br.com.unip.aps.modelo.Pessoa;
 import br.com.unip.aps.modelo.planta.Planta;
 
 public interface Impressao {
+	
+	String dadosParaImpressao(Pessoa p);
+	
 	String dadosParaImpressao(Pessoa pe, Planta p);
 }

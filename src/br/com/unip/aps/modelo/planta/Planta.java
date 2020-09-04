@@ -5,30 +5,31 @@ import br.com.unip.aps.modelo.Natureza;
 public abstract class Planta {
 
 	private String nomePlanta;
-	private int grupo;
-	private boolean estado;
-	private int qLuz;
-	private int qAgua;
-	private int qAguaDia;
-	private int qEnergia;
-	private int qColher;
-	private boolean colheu;
-	private boolean respirando;
-	private final static int estagioInicial = 1;
-	private int estagioAtual;
-	private int estagioFinal;
-	private String apelido;
-	
+	private String apelidoPlanta;
+	private int grupoPlanta;
+	private boolean estadoPlanta;
+	private int quantidadeDeLuz;
+	private int quantidadeDeAgua;
+	private int quantidadeDeAguaDia;
+	private int quantidadeDeEnergiaNaPlanta;
+	private int quantidadeParaColherPlanta;
+	private boolean colherPlanta;
+	private boolean respiracaoPlanta;
+	private final static int estagioInicialPlanta = 1;
+	private int estagioAtualPlanta;
+	private int estagioFinalPlanta;
+
 	Natureza n = new Natureza();
-	
-	Planta(){
-		estado = true;
-		qLuz = 0;
-		qAgua = 0;
-		qAguaDia = 0;
-		colheu = false;
-		respirando = n.getAr();
-		estagioAtual = estagioInicial;
+
+	Planta() {
+		estadoPlanta = true;
+		quantidadeDeLuz = 0;
+		quantidadeDeAgua = 0;
+		quantidadeDeAguaDia = 0;
+		quantidadeDeEnergiaNaPlanta = 0;
+		colherPlanta = false;
+		respiracaoPlanta = n.getAr();
+		estagioAtualPlanta = estagioInicialPlanta;
 	}
 
 	public String getNomePlanta() {
@@ -39,99 +40,112 @@ public abstract class Planta {
 		this.nomePlanta = nomePlanta;
 	}
 
-	public int getGrupo() {
-		return grupo;
+	public int getGrupoPlanta() {
+		return grupoPlanta;
 	}
 
-	public void setGrupo(int grupo) {
-		this.grupo = grupo;
+	public void setGrupoPlanta(int grupo) {
+		this.grupoPlanta = grupo;
 	}
 
-	public boolean isEstado() {
-		return estado;
+	public boolean isEstadoPlanta() {
+		return estadoPlanta;
 	}
 
-	public void setEstado(boolean estado) {
-		this.estado = estado;
+	public void setEstadoPlanta(boolean estado) {
+		this.estadoPlanta = estado;
 	}
 
-	public int getqLuz() {
-		return qLuz;
+	public int getQuantidadeDeLuz() {
+		return quantidadeDeLuz;
 	}
 
-	public void setqLuz(int qLuz) {
-		this.qLuz = qLuz;
+	public void setQuantidadeDeLuz(int qLuz) {
+		this.quantidadeDeLuz = qLuz;
 	}
 
-	public int getqAgua() {
-		return qAgua;
+	public int getQuantidadeDeAgua() {
+		return quantidadeDeAgua;
 	}
 
-	public void setqAgua(int qAgua) {
-		this.qAgua = qAgua;
+	public void setQuantidadeDeAgua(int qAgua) {
+		this.quantidadeDeAgua = qAgua;
 	}
 
-	public int getqAguaDia() {
-		return qAguaDia;
+	public String getApelidoPlanta() {
+		return apelidoPlanta;
 	}
 
-	public void setqAguaDia(int qAguaDia) {
-		this.qAguaDia = qAguaDia;
+	public void setApelidoPlanta(String apelidoPlanta) {
+		this.apelidoPlanta = apelidoPlanta;
 	}
 
-	public int getqEnergia() {
-		return qEnergia;
+	public int getQuantidadeDeAguaDia() {
+		return quantidadeDeAguaDia;
 	}
 
-	public void setqEnergia(int qEnergia) {
-		this.qEnergia = qEnergia;
+	public void setQuantidadeDeAguaDia(int quantidadeDeAguaDia) {
+		this.quantidadeDeAguaDia = quantidadeDeAguaDia;
 	}
 
-	public int getqColher() {
-		return qColher;
+	public int getQuantidadeDeEnergiaNaPlanta() {
+		return quantidadeDeEnergiaNaPlanta;
 	}
 
-	public void setqColher(int qColher) {
-		this.qColher = qColher;
+	public void setQuantidadeDeEnergiaNaPlanta(int quantidadeDeEnergiaNaPlanta) {
+		this.quantidadeDeEnergiaNaPlanta = quantidadeDeEnergiaNaPlanta;
 	}
 
-	public boolean isColheu() {
-		return colheu;
+	public int getQuantidadeParaColherPlanta() {
+		return quantidadeParaColherPlanta;
 	}
 
-	public void setColheu(boolean colheu) {
-		this.colheu = colheu;
+	public void setQuantidadeParaColherPlanta(int quantidadeParaColherPlanta) {
+		this.quantidadeParaColherPlanta = quantidadeParaColherPlanta;
 	}
 
-	public boolean isRespirando() {
-		return respirando;
+	public boolean isColherPlanta() {
+		return colherPlanta;
 	}
 
-	public void setRespirando(boolean respirando) {
-		this.respirando = respirando;
+	public void setColherPlanta(boolean colherPlanta) {
+		this.colherPlanta = colherPlanta;
 	}
 
-	public int getEstagioAtual() {
-		return estagioAtual;
+	public boolean isRespiracaoPlanta() {
+		return respiracaoPlanta;
 	}
 
-	public void setEstagioAtual(int estagioAtual) {
-		this.estagioAtual = estagioAtual;
+	public void setRespiracaoPlanta(boolean respiracaoPlanta) {
+		this.respiracaoPlanta = respiracaoPlanta;
 	}
 
-	public int getEstagioFinal() {
-		return estagioFinal;
+	public int getEstagioAtualPlanta() {
+		return estagioAtualPlanta;
 	}
 
-	public void setEstagioFinal(int estagioFinal) {
-		this.estagioFinal = estagioFinal;
+	public void setEstagioAtualPlanta(int estagioAtualPlanta) {
+		this.estagioAtualPlanta = estagioAtualPlanta;
 	}
-	
-	public String getApelido() {
-		return apelido;
+
+	public int getEstagioFinalPlanta() {
+		return estagioFinalPlanta;
 	}
-	
-	public void setApelido(String apelido) {
-		this.apelido = apelido;
+
+	public void setEstagioFinalPlanta(int estagioFinalPlanta) {
+		this.estagioFinalPlanta = estagioFinalPlanta;
 	}
+
+	public Natureza getN() {
+		return n;
+	}
+
+	public void setN(Natureza n) {
+		this.n = n;
+	}
+
+	public static int getEstagioinicialplanta() {
+		return estagioInicialPlanta;
+	}
+
 }

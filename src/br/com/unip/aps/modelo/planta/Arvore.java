@@ -4,9 +4,10 @@ public class Arvore extends Planta{
 	
 	public Arvore(String nome, String apelido) {
 		this.setNomePlanta(nome);
-		this.setApelido(apelido);
-		this.setGrupo(1);
-		this.setEstagioFinal(3);
+		this.setApelidoPlanta(apelido);
+		this.setGrupoPlanta(1);
+		this.setEstagioFinalPlanta(3);
+		this.setQuantidadeParaColherPlanta(12);
 	}
 
 }
