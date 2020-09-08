@@ -9,19 +9,14 @@ public class ValidarEscolhaAcoes {
 	}
 	
 	public boolean validarCriacaoPlanta(){
-		if(escolhaAcoes > 0 || escolhaAcoes < 6) {
-			return true;
-		} else {
-			return false;
-		}
+		return escolhaAcoes > 0 && escolhaAcoes < 6;
 	}
 	
 	public boolean validaEscolhaSave() {
-		if(escolhaAcoes > 0 || escolhaAcoes < 3) {
-			return true;
-		} else {
-			return false;
-		}
+		return escolhaAcoes > 0 && escolhaAcoes < 3;
 	}
 	
+	public boolean validaEscolhaLoad() {
+		return escolhaAcoes > 0 && escolhaAcoes < 3;
+	}
 }

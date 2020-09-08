@@ -1,0 +1,19 @@
+ARQUIVO DE SALVE DO GAME CUIDE DE UMA PLANTA !!!
+1
+Filipe
+Carvalho
+Carvalinho
+1
+true
+5
+1
+.
+2
+Filipe
+Carvalho
+Carvalinho
+1
+true
+5
+1
+.
