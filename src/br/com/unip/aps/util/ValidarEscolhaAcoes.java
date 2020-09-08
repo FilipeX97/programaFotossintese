@@ -16,6 +16,12 @@ public class ValidarEscolhaAcoes {
 		}
 	}
 	
-	
+	public boolean validaEscolhaSave() {
+		if(escolhaAcoes > 0 || escolhaAcoes < 3) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 }

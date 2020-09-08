@@ -10,19 +10,19 @@ public class ManipulaImpressaoDeDados{
 		String estadoPlanta;
 		
 		dados +=  "Nome da Planta: " + planta.getNomePlanta()
-		+ "/nApelido da Planta: " + planta.getApelidoPlanta()
-		+ "/nGrupo da Planta: " + planta.getGrupoPlanta();
+		+ "\nApelido da Planta: " + planta.getApelidoPlanta()
+		+ "\nGrupo da Planta: " + planta.getGrupoPlanta();
 		
 		if (planta.isColherPlanta()) {
 			dados += "/nPlanta Já Foi Colhida!";
 		} else if (planta.isEstadoPlanta()){
 			estadoPlanta = "Está viva";
-			dados += "/nEstado da Planta: " + estadoPlanta
-			+ "/nQuantidade de Água Colocada No Dia: " + planta.getQuantidadeDeAguaDuranteDia()
-			+ "/nQuantidade de Energia na Planta: " + planta.getQuantidadeDeEnergiaNaPlanta()
-			+ "/nQuantidade de Energia Necessária Para a Planta ser Colhida: " + planta.getQuantidadeEnergiaParaColherPlanta()
-			+ "/nEstágio Atual da Planta: " + planta.getEstagioAtualPlanta()
-			+ "/nEstágio Final da Planta: " + planta.getEstagioFinalPlanta();
+			dados += "\nEstado da Planta: " + estadoPlanta
+			+ "\nQuantidade de Água Colocada No Dia: " + planta.getQuantidadeDeAguaDuranteDia()
+			+ "\nQuantidade de Energia na Planta: " + planta.getQuantidadeDeEnergiaNaPlanta()
+			+ "\nQuantidade de Energia Necessária Para a Planta ser Colhida: " + planta.getQuantidadeEnergiaParaColherPlanta()
+			+ "\nEstágio Atual da Planta: " + planta.getEstagioAtualPlanta()
+			+ "\nEstágio Final da Planta: " + planta.getEstagioFinalPlanta();
 		} else {
 			estadoPlanta = "/nEstá morta";
 		}
@@ -32,7 +32,8 @@ public class ManipulaImpressaoDeDados{
 	
 	public String dadosParaImpressaoDaPessoa(Pessoa pessoa) {
 		String nome;
-		nome = "Seu Nome: " + pessoa.getNomePessoa();
+		nome = "Seu Nome: " + pessoa.getNomePessoa()
+		+ "\nQuantidade de vezes que já regou a sua planta: " + pessoa.getQuatidadeRegaPlanta();
 		return nome;
 	}
 	

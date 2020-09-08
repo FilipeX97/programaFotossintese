@@ -19,7 +19,7 @@ public abstract class Planta {
 	private int estagioAtualPlanta;
 	private int estagioFinalPlanta;
 
-	Natureza n = new Natureza();
+	Natureza n = new Natureza(); 
 
 	Planta() {
 		estadoPlanta = true;
@@ -36,16 +36,16 @@ public abstract class Planta {
 		if (n.getLuz()) {
 			n.setLuz(false);
 			System.out.println("Está de noite..."
-					+ "/nVá dormir...");
+					+ "\nVá dormir...");
 		} else {
 			n.setLuz(true);
 			System.out.println("Está de dia..."
-					+ "/nCuide de sua planta...");
+					+ "\nCuide de sua planta...");
 		}
 	}
 	
 	public boolean isLuz() {
-		return n.getAr();
+		return n.getLuz();
 	}
 
 	public String getNomePlanta() {
