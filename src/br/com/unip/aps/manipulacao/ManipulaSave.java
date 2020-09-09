@@ -27,7 +27,7 @@ public class ManipulaSave {
 		int desejo;
 		int desejo2;
 		
-		if(validaTxt.verficarArquivoExiste(arquivoSave)) {
+		if(validaTxt.verficarArquivoExiste()) {
 			FileWriter fw = new FileWriter(arquivoSave, true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			ValidarEscolhaAcoes valida;

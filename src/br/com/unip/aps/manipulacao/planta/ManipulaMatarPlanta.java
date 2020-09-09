@@ -3,7 +3,7 @@ package br.com.unip.aps.manipulacao.planta;
 import br.com.unip.aps.modelo.planta.Planta;
 import br.com.unip.aps.util.ValidarEstadoPlanta;
 
-public class MatarPlanta {
+public class ManipulaMatarPlanta {
 
 	public void matarPlanta(Planta planta) {
 

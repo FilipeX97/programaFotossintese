@@ -9,8 +9,9 @@ import java.util.Scanner;
 
 public class ValidaArquivoSaveTxt {
 	
-	public boolean verficarArquivoExiste(File arquivo) {
-		 return arquivo.exists();
+	public boolean verficarArquivoExiste() {
+		File arquivo = new File("save.txt");
+		return arquivo.exists();
 	}
 	
 	public boolean verificarArquivoPessoaExiste(int save) throws FileNotFoundException {

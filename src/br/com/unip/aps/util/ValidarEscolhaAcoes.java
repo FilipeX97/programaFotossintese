@@ -17,6 +17,22 @@ public class ValidarEscolhaAcoes {
 	}
 	
 	public boolean validaEscolhaLoad() {
-		return escolhaAcoes > 0 && escolhaAcoes < 3;
+		return escolhaAcoes > 0 && escolhaAcoes < 4;
+	}
+	
+	public boolean validaIniciar() {
+		return escolhaAcoes == 0 || escolhaAcoes == 1;
+	}
+	
+	public boolean validaOpcaoDeJogo(boolean opcaoLoad) {
+		if(opcaoLoad == true) {
+			return escolhaAcoes == 1 || escolhaAcoes == 2;
+		} else {
+			return escolhaAcoes == 1;
+		}
+	}
+	
+	public boolean validaAcao() {
+		return escolhaAcoes > 0 && escolhaAcoes < 8;
 	}
 }

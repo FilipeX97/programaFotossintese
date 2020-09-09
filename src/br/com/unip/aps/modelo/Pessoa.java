@@ -4,6 +4,15 @@ public class Pessoa {
 	
 	private String nomePessoa;
 	private int quatidadeRegaPlanta;
+	private int escolhaDoSave;
+
+	public int getEscolhaDoSave() {
+		return escolhaDoSave;
+	}
+
+	public void setEscolhaDoSave(int escolhaDoSave) {
+		this.escolhaDoSave = escolhaDoSave;
+	}
 
 	public Pessoa(String nome) {
 		nomePessoa = nome;
