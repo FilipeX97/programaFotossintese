@@ -15,6 +15,7 @@ public class ManipulaLoadPessoa {
 	public Pessoa loadPessoa() throws IOException {
 		ValidaArquivoSaveTxt validaPessoa = new ValidaArquivoSaveTxt();
 		ValidarEscolhaAcoes escolha;
+		String validacaoScanner;
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		Scanner s = new Scanner(new FileReader("save.txt"));
@@ -38,7 +39,14 @@ public class ManipulaLoadPessoa {
 						+"\nNome da Planta: " + listaDeSaves.get(12)
 						+"\nApelido da Planta: " + listaDeSaves.get(13));
 
-				int decisao = sc.nextInt();
+				int decisao;
+				validacaoScanner = sc.nextLine();
+				if(validacaoScanner.matches("[0-9]*")) {
+					decisao = Integer.parseInt(validacaoScanner);
+				}else {
+					decisao = 9;
+				}
+				
 				escolha = new ValidarEscolhaAcoes(decisao);
 				
 				if(decisao == 1) {
@@ -75,7 +83,12 @@ public class ManipulaLoadPessoa {
 						+ "\n1 - Sim"
 						+ "\n2 - Não");
 				
-				decisao = sc.nextInt();
+				validacaoScanner = sc.nextLine();
+				if(validacaoScanner.matches("[0-9]*")) {
+					decisao = Integer.parseInt(validacaoScanner);
+				}else {
+					decisao = 9;
+				}
 				
 				if(decisao == 1) {
 					System.out.println("Carregando save do slote 1!");
@@ -90,7 +103,7 @@ public class ManipulaLoadPessoa {
 					System.out.println("Escolha Inválida");
 				}
 			}
-			while(decisao < 0 && decisao > 2);
+			while((decisao > 0 && decisao < 3) == false);
 		}
 		return null;
 	}

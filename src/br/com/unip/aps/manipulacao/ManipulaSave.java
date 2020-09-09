@@ -26,6 +26,7 @@ public class ManipulaSave {
 		Scanner s = new Scanner(System.in);
 		int desejo;
 		int desejo2;
+		String validacaoScanner;
 		
 		if(validaTxt.verficarArquivoExiste()) {
 			FileWriter fw = new FileWriter(arquivoSave, true);
@@ -37,7 +38,13 @@ public class ManipulaSave {
 						+ "\n1 - Sim"
 						+ "\n2 - Não");
 				
-				desejo = s.nextInt();
+				validacaoScanner = s.nextLine();
+				if(validacaoScanner.matches("[0-9]*")) {
+					desejo = Integer.parseInt(validacaoScanner);
+				}else {
+					desejo = 9;
+				}
+				
 				valida = new ValidarEscolhaAcoes(desejo);
 				
 				if(desejo == 1) {
@@ -110,7 +117,12 @@ public class ManipulaSave {
 							+ "\n1 - Sim"
 							+ "\n2 - Não");
 							
-							desejo2 = s.nextInt();
+							validacaoScanner = s.nextLine();
+							if(validacaoScanner.matches("[0-9]*")) {
+								desejo2 = Integer.parseInt(validacaoScanner);
+							}else {
+								desejo2 = 9;
+							}
 							valida2 = new ValidarEscolhaAcoes(desejo2);
 							
 							if(desejo2 == 1) {

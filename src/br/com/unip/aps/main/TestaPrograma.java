@@ -41,9 +41,12 @@ public class TestaPrograma {
 		Planta planta = null;
 		Pessoa pessoa = null;
 		
-		int escolhaMain;
+		int escolhaMain = 0;
 		boolean validarLoad = false;
-		String nomePessoa = null;
+		String nomePessoa;
+		String nomePlanta;
+		String apelidoPlanta;
+		String validacaoScanner;
 		
 		System.out.println("Bem Vindo ao Programa Fotossíntese"
 				+ "\nEscolha uma opção para continuar: ");
@@ -51,7 +54,13 @@ public class TestaPrograma {
 			System.out.println("1 - Iniciar Jogo");
 			System.out.println("0 - Fechar Jogo");
 			
-			escolhaMain = sc1.nextInt();
+			validacaoScanner = sc2.nextLine();
+			if(validacaoScanner.matches("[0-9]*")) {
+				escolhaMain = Integer.parseInt(validacaoScanner);
+			}else {
+				escolhaMain = 9;
+			}
+			
 			escolha = new ValidarEscolhaAcoes(escolhaMain);
 			
 			if(escolhaMain != 0 && escolhaMain != 1) {
@@ -71,7 +80,13 @@ public class TestaPrograma {
 				System.out.println("2 - Carregar Jogo");
 			}
 			
-			escolhaMain = sc1.nextInt();
+			validacaoScanner = sc2.nextLine();
+			if(validacaoScanner.matches("[0-9]*")) {
+				escolhaMain = Integer.parseInt(validacaoScanner);
+			}else {
+				escolhaMain = 9;
+			}
+			
 			escolha = new ValidarEscolhaAcoes(escolhaMain);
 			
 			if(escolhaMain != 1 ) {
@@ -103,7 +118,14 @@ public class TestaPrograma {
 						"4 - Legume\n" + 
 						"5 - Tempero\n" + 
 						"6 - Vegetal");
-				escolhaMain = sc1.nextInt();
+				
+				validacaoScanner = sc2.nextLine();
+				if(validacaoScanner.matches("[0-9]*")) {
+					escolhaMain = Integer.parseInt(validacaoScanner);
+				}else {
+					escolhaMain = 9;
+				}
+				
 				escolha = new ValidarEscolhaAcoes(escolhaMain);
 				if(escolha.validarCriacaoPlanta() == false) {
 					System.out.println("Opção Inválida!");
@@ -112,10 +134,20 @@ public class TestaPrograma {
 			while(escolha.validarCriacaoPlanta() == false);
 				
 			criarPlanta = new ManipulaCriarPlanta(escolhaMain);
-			System.out.println("Digite o nome da Planta: ");
-			String nomePlanta = sc2.nextLine();
-			System.out.println("Digite o Apelido da Planta");
-			String apelidoPlanta = sc2.nextLine();
+			do {
+				System.out.println("Digite o nome da Planta: ");
+				nomePlanta = sc2.nextLine();
+				System.out.println("Digite o Apelido da Planta");
+				apelidoPlanta = sc2.nextLine();
+				
+				if(nomePlanta.length() == 0) {
+					System.out.println("Nome da planta inválida!");
+				}
+				if(apelidoPlanta.length() == 0) {
+					System.out.println("Apelido da planta inválida!");
+				}
+			}
+			while(nomePlanta.length() == 0 || apelidoPlanta.length() == 0);
 			planta = criarPlanta.criarPlanta(nomePlanta, apelidoPlanta);
 				
 		}
@@ -142,7 +174,14 @@ public class TestaPrograma {
 						+ "\n6 - Salvar"
 						+ "\n7 - Sair"
 						+ "\nEscolha: ");
-				escolhaMain = sc1.nextInt();
+				
+				validacaoScanner = sc2.nextLine();
+				if(validacaoScanner.matches("[0-9]*")) {
+					escolhaMain = Integer.parseInt(validacaoScanner);
+				}else {
+					escolhaMain = 9;
+				}
+				
 				escolha = new ValidarEscolhaAcoes(escolhaMain);
 				
 				if(escolha.validaAcao() == false)
