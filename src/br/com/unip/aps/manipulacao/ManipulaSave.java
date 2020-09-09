@@ -17,12 +17,13 @@ import br.com.unip.aps.util.ValidarEscolhaAcoes;
 
 public class ManipulaSave {
 	
-	public void Save(Pessoa pessoa, Planta planta) throws IOException {
+	public void saveArquivo(Pessoa pessoa, Planta planta) throws IOException {
 		
 		ValidaArquivoSaveTxt validaTxt = new ValidaArquivoSaveTxt();
 		File arquivoSave = new File("save.txt");
 		
 		
+		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		int desejo;
 		int desejo2;
@@ -204,9 +205,8 @@ public class ManipulaSave {
 			
 			bw.close();
 			fw.close();
-			System.out.println("Arquivo salvo no slot 1!");
 			
-			s.close();
+			System.out.println("Arquivo salvo no slot 1!");
 		}
 		
 		

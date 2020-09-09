@@ -218,7 +218,7 @@ public class TestaPrograma {
 
 			if(escolhaMain == 6) {
 				salvar = new ManipulaSave();
-				salvar.Save(pessoa, planta);
+				salvar.saveArquivo(pessoa, planta);
 			}
 		}
 		while(escolhaMain != 7);

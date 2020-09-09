@@ -11,6 +11,7 @@ public class ManipulaMatarPlanta {
 
 		if (validaPlanta.validar(planta)) {
 			planta.setEstadoPlanta(false);
+			System.out.println("Planta morta!");
 		}
 
 	}
