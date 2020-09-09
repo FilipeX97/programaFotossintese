@@ -1,8 +1,8 @@
 package br.com.unip.aps.util;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,11 +10,10 @@ import java.util.Scanner;
 public class ValidaArquivoSaveTxt {
 	
 	public boolean verficarArquivoExiste() {
-		File arquivo = new File("save.txt");
-		return arquivo.exists();
+		return new File("save.txt").exists();
 	}
 	
-	public boolean verificarArquivoPessoaExiste(int save) throws FileNotFoundException {
+	public boolean verificarArquivoPessoaExiste(int save) throws IOException {
 		Scanner s = new Scanner(new FileReader("save.txt"));
 		List<String> listaDeSaves = new ArrayList<String>();
 		while(s.hasNextLine()) {

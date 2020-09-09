@@ -1,7 +1,7 @@
 package br.com.unip.aps.manipulacao;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,9 +12,11 @@ import br.com.unip.aps.util.ValidarEscolhaAcoes;
 
 public class ManipulaLoadPessoa {
 	
-	public Pessoa loadPessoa() throws FileNotFoundException {
+	public Pessoa loadPessoa() throws IOException {
 		ValidaArquivoSaveTxt validaPessoa = new ValidaArquivoSaveTxt();
 		ValidarEscolhaAcoes escolha;
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
 		Scanner s = new Scanner(new FileReader("save.txt"));
 		List<String> listaDeSaves = new ArrayList<String>();
 		while(s.hasNextLine()) {
@@ -35,7 +37,7 @@ public class ManipulaLoadPessoa {
 						+"\nNome da Pessoa: " + listaDeSaves.get(11)
 						+"\nNome da Planta: " + listaDeSaves.get(12)
 						+"\nApelido da Planta: " + listaDeSaves.get(13));
-				Scanner sc = new Scanner(System.in);
+
 				int decisao = sc.nextInt();
 				escolha = new ValidarEscolhaAcoes(decisao);
 				
@@ -52,7 +54,8 @@ public class ManipulaLoadPessoa {
 					System.out.println("Seja bem vindo de volta, "  + pessoa.getNomePessoa());
 					return pessoa;
 				} else if (decisao == 3) {
-					System.out.println("Não foi carregado nenhum save, voltando ao menu inicial...");
+					System.out.println("Não foi carregado nenhum save, fechando jogo...");
+					System.exit(0);
 				} else {
 					System.out.println("Opção Inválida!");
 				}
@@ -71,7 +74,7 @@ public class ManipulaLoadPessoa {
 				System.out.println("Deseja carregar?"
 						+ "\n1 - Sim"
 						+ "\n2 - Não");
-				Scanner sc = new Scanner(System.in);
+				
 				decisao = sc.nextInt();
 				
 				if(decisao == 1) {
@@ -81,7 +84,8 @@ public class ManipulaLoadPessoa {
 					pessoa.setEscolhaDoSave(1);
 					return pessoa;
 				} else if(decisao == 2) {
-					System.out.println("Não foi carregado nenhum save, voltando ao menu inicial...");
+					System.out.println("Não foi carregado nenhum save, fechando jogo...");
+					System.exit(0);
 				} else {
 					System.out.println("Escolha Inválida");
 				}
@@ -90,6 +94,5 @@ public class ManipulaLoadPessoa {
 		}
 		return null;
 	}
-	
 	
 }

@@ -9,7 +9,7 @@ public class ValidarEscolhaAcoes {
 	}
 	
 	public boolean validarCriacaoPlanta(){
-		return escolhaAcoes > 0 && escolhaAcoes < 6;
+		return escolhaAcoes > 0 && escolhaAcoes < 7;
 	}
 	
 	public boolean validaEscolhaSave() {

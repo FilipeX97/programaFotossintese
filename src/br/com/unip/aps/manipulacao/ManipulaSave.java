@@ -194,7 +194,9 @@ public class ManipulaSave {
 			fw.close();
 			System.out.println("Arquivo salvo no slot 1!");
 			
-			
+			s.close();
 		}
+		
+		
 	}
 }

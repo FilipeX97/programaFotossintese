@@ -9,6 +9,7 @@ import br.com.unip.aps.manipulacao.ManipulaLoadPlanta;
 import br.com.unip.aps.manipulacao.ManipulaSave;
 import br.com.unip.aps.manipulacao.pessoa.ManipulaCriarPessoa;
 import br.com.unip.aps.manipulacao.pessoa.ManipulaDormirPessoa;
+import br.com.unip.aps.manipulacao.planta.ManipulaColherPlanta;
 import br.com.unip.aps.manipulacao.planta.ManipulaCriarPlanta;
 import br.com.unip.aps.manipulacao.planta.ManipulaMatarPlanta;
 import br.com.unip.aps.manipulacao.planta.ManipulaRegarPlanta;
@@ -29,17 +30,20 @@ public class TestaPrograma {
 		ManipulaLoadPlanta loadPlanta;
 		ManipulaRegarPlanta regaPlanta;
 		ManipulaImpressaoDeDados imprimir;
+		ManipulaColherPlanta colhePlanta;
 		ManipulaDormirPessoa dormirPessoa;
 		ManipulaMatarPlanta matarPlanta;
 		ManipulaSave salvar;
 
 		Scanner sc1 = new Scanner(System.in);
+		Scanner sc2 = new Scanner(System.in);
 		
 		Planta planta = null;
 		Pessoa pessoa = null;
 		
 		int escolhaMain;
 		boolean validarLoad = false;
+		String nomePessoa = null;
 		
 		System.out.println("Bem Vindo ao Programa Fotossíntese"
 				+ "\nEscolha uma opção para continuar: ");
@@ -70,43 +74,50 @@ public class TestaPrograma {
 			escolhaMain = sc1.nextInt();
 			escolha = new ValidarEscolhaAcoes(escolhaMain);
 			
-			if(escolhaMain != 1) {
-				if (validarLoad == true && escolhaMain != 2) {
-					System.out.println("Opção Inválida!");
-					if(validarLoad == false)
-						System.out.println("Não contêm load!");
-				}
+			if(escolhaMain != 1 ) {
+				System.out.println("Opção Inválida!");
+				if(validarLoad == false && escolhaMain == 2)
+					System.out.println("Não contêm load!");
 			}
 		}
 		while(escolha.validaOpcaoDeJogo(validarLoad) == false);
 		
 		if (escolhaMain == 1) {
-			System.out.println("Digite o Nome da Pessoa: ");
-			String nomePessoa = sc1.nextLine();
+			do {
+				System.out.println("Digite o Nome da Pessoa: ");
+				nomePessoa = sc2.nextLine();
+				if(nomePessoa.length() == 0) {
+					System.out.println("Digitação Inválida, não deixe o campo em branco");
+				}
+			}
+			while(nomePessoa.length() == 0);
+			
 			pessoa = criarPessoa.criarPessoa(nomePessoa);
 			
+			
 			do {
-				System.out.println("Escolha a Categoria da sua Planta: " +
-						"1 - Flor\n" + 
-						"2 - Tempero\n" + 
-						"3 - Legume\n" + 
-						"4 - Vegetal\n" + 
-						"5 - Fruta\n" + 
-						"6 - Árvore");
+				System.out.println("Escolha a Categoria da sua Planta: \n" +
+						"1 - Árvore\n" + 
+						"2 - Flor\n" + 
+						"3 - Fruta\n" + 
+						"4 - Legume\n" + 
+						"5 - Tempero\n" + 
+						"6 - Vegetal");
 				escolhaMain = sc1.nextInt();
-				
-				criarPlanta = new ManipulaCriarPlanta(escolhaMain);
-				System.out.println("Digite o nome da Planta: ");
-				String nomePlanta = sc1.nextLine();
-				System.out.println("Digite o Apelido da Planta");
-				String apelidoPlanta = sc1.nextLine();
-				planta = criarPlanta.criarPlanta(nomePlanta, apelidoPlanta);
-				
+				escolha = new ValidarEscolhaAcoes(escolhaMain);
 				if(escolha.validarCriacaoPlanta() == false) {
 					System.out.println("Opção Inválida!");
 				}
 			}
 			while(escolha.validarCriacaoPlanta() == false);
+				
+			criarPlanta = new ManipulaCriarPlanta(escolhaMain);
+			System.out.println("Digite o nome da Planta: ");
+			String nomePlanta = sc2.nextLine();
+			System.out.println("Digite o Apelido da Planta");
+			String apelidoPlanta = sc2.nextLine();
+			planta = criarPlanta.criarPlanta(nomePlanta, apelidoPlanta);
+				
 		}
 		
 		if (escolhaMain == 2) {
@@ -151,7 +162,9 @@ public class TestaPrograma {
 			}
 			
 			if(escolhaMain == 3) {
-				// FAZER...
+				// TODO: Criar opção de colher
+				colhePlanta = new ManipulaColherPlanta();
+				colhePlanta.colherPlanta(planta);
 			}
 			
 			if(escolhaMain == 4) {
@@ -172,5 +185,8 @@ public class TestaPrograma {
 		while(escolhaMain != 7);
 		
 		System.exit(0);
+		
+		sc1.close();
+		sc2.close();
 	}
 }

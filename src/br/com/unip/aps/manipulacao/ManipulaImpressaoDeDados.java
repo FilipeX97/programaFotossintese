@@ -14,7 +14,7 @@ public class ManipulaImpressaoDeDados{
 		+ "\nGrupo da Planta: " + planta.getGrupoPlanta();
 		
 		if (planta.isColherPlanta()) {
-			dados += "/nPlanta Já Foi Colhida!";
+			dados += "\nPlanta Já Foi Colhida!";
 		} else if (planta.isEstadoPlanta()){
 			estadoPlanta = "Está viva";
 			dados += "\nEstado da Planta: " + estadoPlanta
@@ -24,7 +24,7 @@ public class ManipulaImpressaoDeDados{
 			+ "\nEstágio Atual da Planta: " + planta.getEstagioAtualPlanta()
 			+ "\nEstágio Final da Planta: " + planta.getEstagioFinalPlanta();
 		} else {
-			estadoPlanta = "/nEstá morta";
+			estadoPlanta = "\nEstá morta";
 		}
 				
 		return dados;
