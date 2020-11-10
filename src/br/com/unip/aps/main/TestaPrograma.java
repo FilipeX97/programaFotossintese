@@ -150,7 +150,7 @@ public class TestaPrograma {
 			while(nomePlanta.length() == 0 || apelidoPlanta.length() == 0);
 			planta = criarPlanta.criarPlanta(nomePlanta, apelidoPlanta);
 				
-		}
+		} else
 		
 		if (escolhaMain == 2) {
 			if(validaSaveTxt.verficarArquivoExiste()) {

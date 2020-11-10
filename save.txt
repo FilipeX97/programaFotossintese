@@ -1,10 +1,19 @@
 ARQUIVO DE SALVE DO GAME CUIDE DE UMA PLANTA !!!
 1
-Caio
-Carvalho
-Carvalinho
-1
-true
+df
+d
+s
 2
+true
+0
+1
+.
+2
+df
+d
+s
+2
+true
+0
 1
 .
