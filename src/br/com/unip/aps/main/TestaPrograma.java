@@ -16,13 +16,13 @@ import br.com.unip.aps.manipulacao.planta.ManipulaRegarPlanta;
 import br.com.unip.aps.modelo.Pessoa;
 import br.com.unip.aps.modelo.planta.Planta;
 import br.com.unip.aps.util.ValidaArquivoSaveTxt;
-import br.com.unip.aps.util.ValidarEscolhaAcoes;
+import br.com.unip.aps.util.ValidaEscolhaAcoes;
 
 public class TestaPrograma {
 	
 	public static void main(String[] args) throws IOException {
 		
-		ValidarEscolhaAcoes escolha;
+		ValidaEscolhaAcoes escolha;
 		ValidaArquivoSaveTxt validaSaveTxt = new ValidaArquivoSaveTxt();
 		ManipulaCriarPlanta criarPlanta;
 		ManipulaCriarPessoa criarPessoa = new ManipulaCriarPessoa();
@@ -61,7 +61,7 @@ public class TestaPrograma {
 				escolhaMain = 9;
 			}
 			
-			escolha = new ValidarEscolhaAcoes(escolhaMain);
+			escolha = new ValidaEscolhaAcoes(escolhaMain);
 			
 			if(escolhaMain != 0 && escolhaMain != 1) {
 				System.out.println("Opção Inválida!");
@@ -87,7 +87,7 @@ public class TestaPrograma {
 				escolhaMain = 9;
 			}
 			
-			escolha = new ValidarEscolhaAcoes(escolhaMain);
+			escolha = new ValidaEscolhaAcoes(escolhaMain);
 			
 			if(escolhaMain != 1 ) {
 				System.out.println("Opção Inválida!");
@@ -126,7 +126,7 @@ public class TestaPrograma {
 					escolhaMain = 9;
 				}
 				
-				escolha = new ValidarEscolhaAcoes(escolhaMain);
+				escolha = new ValidaEscolhaAcoes(escolhaMain);
 				if(escolha.validarCriacaoPlanta() == false) {
 					System.out.println("Opção Inválida!");
 				}
@@ -182,7 +182,7 @@ public class TestaPrograma {
 					escolhaMain = 9;
 				}
 				
-				escolha = new ValidarEscolhaAcoes(escolhaMain);
+				escolha = new ValidaEscolhaAcoes(escolhaMain);
 				
 				if(escolha.validaAcao() == false)
 					System.out.println("Opção Inválida!");

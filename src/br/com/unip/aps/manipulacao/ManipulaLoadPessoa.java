@@ -8,13 +8,13 @@ import java.util.Scanner;
 
 import br.com.unip.aps.modelo.Pessoa;
 import br.com.unip.aps.util.ValidaArquivoSaveTxt;
-import br.com.unip.aps.util.ValidarEscolhaAcoes;
+import br.com.unip.aps.util.ValidaEscolhaAcoes;
 
 public class ManipulaLoadPessoa {
 	
 	public Pessoa loadPessoa() throws IOException {
 		ValidaArquivoSaveTxt validaPessoa = new ValidaArquivoSaveTxt();
-		ValidarEscolhaAcoes escolha;
+		ValidaEscolhaAcoes escolha;
 		String validacaoScanner;
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -47,7 +47,7 @@ public class ManipulaLoadPessoa {
 					decisao = 9;
 				}
 				
-				escolha = new ValidarEscolhaAcoes(decisao);
+				escolha = new ValidaEscolhaAcoes(decisao);
 				
 				if(decisao == 1) {
 					System.out.println("Carregando save do slote 1!");

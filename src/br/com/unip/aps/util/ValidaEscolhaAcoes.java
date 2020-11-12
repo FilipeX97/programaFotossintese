@@ -1,10 +1,10 @@
 package br.com.unip.aps.util;
 
-public class ValidarEscolhaAcoes {
+public class ValidaEscolhaAcoes {
 	
 	private int escolhaAcoes;
 	
-	public ValidarEscolhaAcoes(int escolha) {
+	public ValidaEscolhaAcoes(int escolha) {
 		escolhaAcoes = escolha;
 	}
 	

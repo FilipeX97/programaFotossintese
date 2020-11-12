@@ -13,7 +13,7 @@ import java.util.Scanner;
 import br.com.unip.aps.modelo.Pessoa;
 import br.com.unip.aps.modelo.planta.Planta;
 import br.com.unip.aps.util.ValidaArquivoSaveTxt;
-import br.com.unip.aps.util.ValidarEscolhaAcoes;
+import br.com.unip.aps.util.ValidaEscolhaAcoes;
 
 public class ManipulaSave {
 	
@@ -32,7 +32,7 @@ public class ManipulaSave {
 		if(validaTxt.verficarArquivoExiste()) {
 			FileWriter fw = new FileWriter(arquivoSave, true);
 			BufferedWriter bw = new BufferedWriter(fw);
-			ValidarEscolhaAcoes valida;
+			ValidaEscolhaAcoes valida;
 			do {
 				System.out.println("Já possui um save no slot 1!"
 						+ "\nDeseja Sobrescrever?"
@@ -46,7 +46,7 @@ public class ManipulaSave {
 					desejo = 9;
 				}
 				
-				valida = new ValidarEscolhaAcoes(desejo);
+				valida = new ValidaEscolhaAcoes(desejo);
 				
 				if(desejo == 1) {
 					
@@ -111,7 +111,7 @@ public class ManipulaSave {
 					}
 					
 					if(listaDeSaves.size() == 19) {
-						ValidarEscolhaAcoes valida2;
+						ValidaEscolhaAcoes valida2;
 						do {
 							System.out.println("Já possui um save no slot 2!"
 							+ "\nDeseja Sobrescrever?"
@@ -124,7 +124,7 @@ public class ManipulaSave {
 							}else {
 								desejo2 = 9;
 							}
-							valida2 = new ValidarEscolhaAcoes(desejo2);
+							valida2 = new ValidaEscolhaAcoes(desejo2);
 							
 							if(desejo2 == 1) {
 								
