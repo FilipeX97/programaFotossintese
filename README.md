@@ -1,5 +1,6 @@
 # programaFotossintese
-![Badge](https://img.shields.io/badge/language-java-brightgreen?label=language&message=java)
+![Badge](https://img.shields.io/badge/language-java-brightgreen?label=language&message=java) 
+![Badge](https://img.shields.io/badge/version-1.0.2-blue)
 
 ### Projeto do terceiro semestre do curso Ciência da Computação
 
